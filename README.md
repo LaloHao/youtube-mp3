@@ -5,11 +5,15 @@ Usage:
 
 Download
 ----------------
+```
 youtube-mp3 "https://www.youtube.com/watch?v=F9eKiSeKARM"
+```
 
 Split
 ----------------
+```
 split "Deep House Mix 2015 #63 _ New Music Mixed by XYPO.mp3" dp.txt
+```
 
 dp.txt
 ```
