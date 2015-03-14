@@ -5,6 +5,14 @@ Requirements
 ----------------
 * ffmpeg
 * youtube-dl
+* a shell
+
+Installation
+----------------
+```
+source youtube-mp3.sh
+```
+
 
 Download
 ----------------
