@@ -20,7 +20,6 @@ split()
     done
     echo $tracklist[$i] $names[$i]
     ffmpeg -loglevel quiet -ss $tracklist[i] -i "$1" -acodec copy -vcodec copy -async 1 "$names[$i].mp3"
-
 }
 
 fileExists(){
@@ -36,8 +35,13 @@ file="${file%.*}"
 if fileExists "$file.mp3"; then
    echo "File already exists: $file.mp3"
 else
-    youtube-dl -f "bestaudio" -o "%(title)s.%(ext)s" "$1" --newline | grep ETA
+    youtube-dl -f "bestaudio" -o "%(title)s.%(ext)s" "$1" --newline | grep ETA |
+        while IFS= read -r line
+        do
+            echo -n "$line\\r"
+            sleep 1
+        done
+    echo ""
     ffmpeg -loglevel quiet -i "$file.$ext" "${file}.mp3" && rm "$file.$ext" && echo "Wrote $file.mp3"
 fi
 }
-

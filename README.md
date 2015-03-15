@@ -17,7 +17,7 @@ source youtube-mp3.sh
 Download
 ----------------
 ```
-youtube-mp3 "https://www.youtube.com/watch?v=F9eKiSeKARM"
+dl "https://www.youtube.com/watch?v=F9eKiSeKARM"
 ```
 
 Split
